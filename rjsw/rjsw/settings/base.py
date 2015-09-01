@@ -1,15 +1,13 @@
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# ROOT_DIR/PROJ_DIR/SITE_DIR
+SITE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJ_DIR = os.path.dirname(SITE_DIR)
+ROOT_DIR = os.path.dirname(PROJ_DIR)
 
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+	'*',
+]
 
 # Application definition
 
@@ -20,6 +18,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,13 +52,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'rjsw.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -71,3 +63,8 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
+
+MEDIA_ROOT = os.path.join(ROOT_DIR, 'media')
+MEDIA_URL = '/media/'
+
