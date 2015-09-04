@@ -1,16 +1,13 @@
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+# ROOT_DIR/PROJ_DIR/SITE_DIR
 SITE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJ_DIR = os.path.dirname(SITE_DIR)
 ROOT_DIR = os.path.dirname(PROJ_DIR)
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+	'*',
+]
 
 # Application definition
 
@@ -83,7 +80,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'rjsw.wsgi.application'
 
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Australia/Melbourne'
@@ -96,7 +92,6 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
 STATIC_URL = '/static/'
-
 MEDIA_ROOT = os.path.join(ROOT_DIR, 'media')
 MEDIA_URL = '/media/'
 
