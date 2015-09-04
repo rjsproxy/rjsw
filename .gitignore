@@ -1,9 +1,10 @@
 /rjsw/rjsw/settings/__init__.py
 /rjsw/db.sqlite3
 /venv
+/virtualenv
 /static
 /media
-
+/db.sqlite3
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
